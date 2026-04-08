@@ -31,7 +31,8 @@ namespace Coffee.UISoftMask
         {
             if (!s_SharedTerminalMaterial)
             {
-                s_SharedTerminalMaterial = new Material(Shader.Find("Hidden/UI/TerminalMaskingShape"))
+                s_SharedTerminalMaterial = new Material(UISoftMaskProjectSettings.shaderRegistry
+                    .FindShaderByName("Hidden/UI/TerminalMaskingShape"))
                 {
                     hideFlags = HideFlags.DontSave | HideFlags.NotEditable
                 };

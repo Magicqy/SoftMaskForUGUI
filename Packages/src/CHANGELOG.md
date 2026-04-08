@@ -1,3 +1,9 @@
+## [Unreleased]
+
+### Features
+
+* add `Exclude From Preloaded Assets When Build Player` option: temporarily removes settings from `PlayerSettings.preloadedAssets` during Player Build only, enabling AssetBundle / Addressables hot-update workflows while keeping normal Editor behavior unchanged
+
 # [3.5.0](https://github.com/mob-sakai/SoftMaskForUGUI/compare/3.4.1...3.5.0) (2025-11-08)
 
 

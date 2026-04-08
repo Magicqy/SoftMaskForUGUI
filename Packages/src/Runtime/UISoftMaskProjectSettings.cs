@@ -118,6 +118,14 @@ namespace Coffee.UISoftMask
             InternalListPool<SoftMask>.Return(ref softMasks);
         }
 
+#if !UNITY_EDITOR
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            m_ShaderVariantRegistry.InitializeShaderLookup();
+        }
+#endif
+
 #if UNITY_EDITOR
         [InitializeOnLoadMethod]
         private static void InitializeOnLoadMethod()
@@ -172,6 +180,7 @@ namespace Coffee.UISoftMask
         protected override void OnEnable()
         {
             base.OnEnable();
+            m_ShaderVariantRegistry.InitializeShaderLookup();
             m_ShaderVariantRegistry.onShaderRequested = ShaderSampleImporter.ImportShaderIfSelected;
             m_ShaderVariantRegistry.ClearCache();
         }
